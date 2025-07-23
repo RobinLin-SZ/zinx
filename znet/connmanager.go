@@ -13,6 +13,10 @@ type ConnManager struct {
 	connections zutils.ShardLockMaps
 }
 
+func NewConnManager() *ConnManager {
+	return newConnManager()
+}
+
 func newConnManager() *ConnManager {
 	return &ConnManager{
 		connections: zutils.NewShardLockMaps(),

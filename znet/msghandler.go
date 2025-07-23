@@ -49,6 +49,10 @@ type MsgHandle struct {
 	RouterSlices *RouterSlices
 }
 
+func NewMsgHandle() *MsgHandle {
+	return newMsgHandle()
+}
+
 // newMsgHandle creates MsgHandle
 // zinxRole: IServer
 func newMsgHandle() *MsgHandle {
@@ -157,6 +161,10 @@ func newCliMsgHandle() *MsgHandle {
 	return handle
 }
 
+func UseWorker(conn ziface.IConnection) uint32 {
+	return useWorker(conn)
+}
+
 // Use worker ID
 // 占用workerID
 func useWorker(conn ziface.IConnection) uint32 {
@@ -214,6 +222,10 @@ func useWorker(conn ziface.IConnection) uint32 {
 	}
 
 	return workerId
+}
+
+func FreeWorker(conn ziface.IConnection) {
+	freeWorker(conn)
 }
 
 // Free worker ID
