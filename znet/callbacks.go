@@ -7,6 +7,10 @@ type callbackCommon struct {
 	next    *callbackCommon
 }
 
+type Callbacks struct {
+	callbacks
+}
+
 type callbacks struct {
 	first *callbackCommon
 	last  *callbackCommon
